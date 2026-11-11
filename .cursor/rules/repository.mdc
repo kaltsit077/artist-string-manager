@@ -1,0 +1,13 @@
+---
+description: Core architecture and data-safety rules for 画师串管理器
+alwaysApply: true
+---
+
+# Repository Rules
+
+- Develop the maintained desktop application in `app_electron/`; keep new behavior out of the Python fallback unless explicitly requested.
+- Keep renderer, preload, and main-process responsibilities separate. Renderer code must use the narrow `window.artistApp` API and must not import Node or Electron APIs.
+- Preserve the JSON data contract and relative image paths. Validate every filesystem path in the Electron main process and keep destructive file operations inside the managed `images/` directory.
+- Never add local user data, reference images, secrets, `node_modules`, Electron binaries, or generated release folders to Git.
+- Keep list work virtualized and lazy so the number of rendered cards stays tied to the viewport.
+- Update architecture and setup documentation when changing storage, startup, or module boundaries.

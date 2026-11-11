@@ -1,0 +1,42 @@
+# JavaScript dependencies and Electron binaries
+**/node_modules/
+**/.electron-cache/
+
+# Generated application bundles
+/build/
+/dist/
+/release*/
+**/release/
+*.spec
+
+# Python environments and generated files
+/.venv/
+/.dotnet-cli/
+__pycache__/
+*.py[cod]
+
+# Local data, user images, and runtime logs
+artist_group_tags.json
+artist_combo_history.json
+images/
+**/images/
+*.log
+*.tmp
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+*token*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# External reference checkout is not part of this project
+/_ref_check/

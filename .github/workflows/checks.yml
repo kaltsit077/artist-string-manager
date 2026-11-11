@@ -1,0 +1,20 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  javascript:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app_electron/package-lock.json
+      - run: npm ci --ignore-scripts
+        working-directory: app_electron
+      - run: npm run check
+        working-directory: app_electron
